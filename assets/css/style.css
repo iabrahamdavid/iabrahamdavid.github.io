@@ -334,11 +334,6 @@ main {
 .avatar-box {
   background: var(--bg-gradient-onyx);
 }
-.profile-picture {
-  width: 10px;
-  height: 10px;
-  border-radius: 8px;
-}
 
 .info-content .name {
   color: var(--white-2);
@@ -1303,9 +1298,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .profile-picture {
-  width: 100%;
   height: auto;
-  border-radius: 2rem;
+  border-radius: 15px;
+  width: 12em;
 }
 
 /* Scrollable sidebar */
@@ -1422,7 +1417,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .avatar-box { border-radius: 30px; }
 
-  /* .avatar-box img { width: 120px; } */
+  .avatar-box img { width: 120px; }
 
   .info-content .name { margin-bottom: 15px; }
 
