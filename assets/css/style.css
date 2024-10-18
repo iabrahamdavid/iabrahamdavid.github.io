@@ -35,7 +35,7 @@
   ), hsl(240, 2%, 13%);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
+    #ffda6b 0%, 
     hsla(36, 100%, 69%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
@@ -333,7 +333,11 @@ main {
 
 .avatar-box {
   background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+}
+.profile-picture {
+  width: auto;
+  height: auto;
+  border-radius: 2rem;
 }
 
 .info-content .name {
@@ -386,11 +390,6 @@ main {
 
 .info_more-btn span { display: none; }
 
-.sidebar-info_more {
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition-2);
-}
 
 .sidebar.active .sidebar-info_more {
   opacity: 1;
@@ -939,7 +938,6 @@ main {
   margin-bottom: 10px;
 }
 
-.project-item { display: none; }
 
 .project-item.active {
   display: block;
@@ -1225,14 +1223,99 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-/*-----------------------------------*\
-  #RESPONSIVE
-\*-----------------------------------*/
-
+/
 /**
  * responsive larger than 450px screen
  */
 
+@media (min-width: 450px) {
+
+  /**
+   * client
+   */
+
+  .clients-item { min-width: calc(33.33% - 10px); }
+
+  /**
+   * #PORTFOLIO, BLOG 
+   */
+
+  .project-img,
+  .blog-banner-box { height: auto; }
+
+  /**
+   * profile picture
+   */
+
+  .profile-picture {
+    max-width: 150px; /* Ajusta este valor según tus necesidades */
+  }
+}
+
+/**
+ * responsive larger than 580px screen
+ */
+
+@media (min-width: 580px) {
+
+  /**
+   * CUSTOM PROPERTY
+   */
+
+  :root {
+
+    /**
+     * typography
+     */
+
+    --fs-1: 32px;
+    --fs-2: 24px;
+    --fs-3: 26px;
+    --fs-4: 18px;
+    --fs-6: 15px;
+    --fs-7: 15px;
+    --fs-8: 12px;
+
+  }
+
+  /**
+   * profile picture
+   */
+
+  .profile-picture {
+    max-width: 200px; /* Ajusta este valor según tus necesidades */
+  }
+}
+
+/**
+ * responsive larger than 1024px screen
+ */
+
+@media (min-width: 1024px) {
+
+  /**
+   * profile picture
+   */
+
+  .profile-picture {
+    max-width: 250px; /* Ajusta este valor según tus necesidades */
+  }
+}
+
+.profile-picture {
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+}
+
+/* Scrollable sidebar */
+.sidebar {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+ 
+/* 
 @media (min-width: 450px) {
 
   /**
@@ -1280,7 +1363,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     --fs-7: 15px;
     --fs-8: 12px;
 
-  }
+  } */
 
 
 

@@ -2,19 +2,6 @@
 
 
 
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
-
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
 
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
@@ -115,24 +102,33 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 
 
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita el envío del formulario por defecto
 
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
+  const formData = new FormData(this);
+  const data = {
+    fullname: formData.get('fullname'),
+    email: formData.get('email'),
+    message: formData.get('message')
+  };
 
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
+  fetch('https://your-server-endpoint.com/send-email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    alert('Correo enviado con éxito.');
+  })
+  .catch(error => {
+    console.error('Error al enviar el correo:', error);
+    alert('Hubo un error al enviar el correo.');
   });
-}
+});
+
 
 
 
