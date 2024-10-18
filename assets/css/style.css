@@ -335,9 +335,9 @@ main {
   background: var(--bg-gradient-onyx);
 }
 .profile-picture {
-  width: auto;
-  height: auto;
-  border-radius: 2rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 8px;
 }
 
 .info-content .name {
@@ -1223,7 +1223,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-/
+
 /**
  * responsive larger than 450px screen
  */
@@ -1333,7 +1333,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .project-img,
   .blog-banner-box { height: auto; }
 
-}
+
 
 
 
@@ -1422,7 +1422,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .avatar-box { border-radius: 30px; }
 
-  .avatar-box img { width: 120px; }
+  /* .avatar-box img { width: 120px; } */
 
   .info-content .name { margin-bottom: 15px; }
 
